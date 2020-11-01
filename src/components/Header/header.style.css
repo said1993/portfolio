@@ -1,0 +1,116 @@
+nav {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  top: 0;
+  font-family: "Montserrat", sans-serif;
+  padding: 0 5%;
+  height: 100px;
+  background-color: #0082e6;
+}
+nav .logo {
+  float: left;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  color: #fff;
+}
+
+nav .links {
+  float: right;
+  padding: 0;
+  margin: 0;
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+nav .links li {
+  list-style: none;
+}
+
+nav .links .link {
+  display: block;
+  padding: 1em;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+nav .links .link .active,
+nav .links .link:hover {
+  background-color: #0b91f8;
+  transition: 0.5s;
+}
+#nav-toggle {
+  display: none;
+}
+
+nav .icon-burger {
+  font-size: 30px;
+  color: #fff;
+  float: right;
+  line-height: 100px;
+  margin-right: 40px;
+  cursor: pointer;
+}
+nav .icon-close {
+  display: none;
+  font-size: 30px;
+  color: #fff;
+  float: right;
+  line-height: 100px;
+  margin-right: 40px;
+  cursor: pointer;
+}
+nav .icon-burger .line {
+  position: absolute;
+  width: 30px;
+  height: 5px;
+  background-color: #fff;
+  margin: 5px;
+  border-radius: 3px;
+}
+@media screen and (max-width: 768px) {
+  nav .links {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100vh;
+    justify-content: space-between;
+    background-color: rgba(7, 7, 7, 0.74);
+    top: 100px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+  }
+  nav .icon-burger {
+    display: block;
+  }
+  nav .links li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav .links li .link {
+    font-size: 20px;
+  }
+  nav .links li .link .active,
+  nav .links li .link:hover {
+    background: none;
+    color: #0082e6;
+  }
+  #nav-toggle:checked ~ .links {
+    left: 0;
+  }
+  #nav-toggle:not(:checked) ~ nav .icon-close {
+    display: block;
+  }
+}
